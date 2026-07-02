@@ -33,15 +33,3 @@ df_clean = df.drop(columns=["cpf_cliente", "nome_cliente", "medicamento_controla
 
 # Filtragem de Negócio: Estoque zerado e produtos Curva A
 df_ruptura = df_clean[(df_clean["estoque_atual"] == 0) & (df_clean["curva_abc"] == "A")]
-
-## 🩹 A Cicatriz e a Correção (Troubleshooting)
-O Ponto Cego (A Falha Arquitetural)
-Apesar da genialidade no uso do Python para evitar o crash do servidor, a IA cometeu um erro grave de escalabilidade na etapa final. Ela sugeriu o uso de um nó visual de roteamento estático (Switch Node) para separar os alertas de cada loja. Em uma rede comercial com dezenas de filiais, isso criaria um fluxo visual monstruoso e insustentável de gerenciar.
-
-O Feedback e a Iteração
-Para corrigir esse desvio, não apenas instruí a IA no chat, mas alterei a base de conhecimento (o Documento Semente), injetando uma nova diretriz de escalabilidade:
-
-Feedback / Nova Regra Implementada: "A partir de agora, obedeça à Lei do Roteamento Dinâmico. Para envio de dados a múltiplos destinatários, é terminantemente proibido utilizar nós de roteamento visual (Switch). A arquitetura deve utilizar um único nó final alimentado por variáveis dinâmicas do JSON (ex: {{ $json.chat_id_loja }} e {{ $json.mensagem }})."
-
-Veredito da Versão 1.0
-A IA absorveu a instrução e redesenhou o fluxo final com um único nó HTTP Request para o Telegram, rodando em loop inteligente por baixo dos panos. O fluxo passou de um labirinto inescalável para uma linha reta resiliente.
