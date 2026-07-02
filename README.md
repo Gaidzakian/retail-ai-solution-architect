@@ -1,4 +1,4 @@
-# retail-ai-solution-architect
+# Retail-AI-Solution-Architect
 AI-powered Solution Architect built with Google NotebookLM to design scalable and resilient automation workflows for retail operations.
 # 🏗️ Arquiteto de Soluções Sênior em IA: Orquestração e Resiliência no Varejo
 
